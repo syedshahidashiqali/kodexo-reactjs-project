@@ -4,6 +4,7 @@
 
 import heartFill from './assets/heart-fill.svg';
 import heartStroke from './assets/heart-stroke.svg';
+import { Link } from 'react-router-dom';
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
         <img src={heartFill} className="App-logo" alt="favorite icon" />
         <img src={heartStroke} className="App-logo" alt="unfavorite icon" />
       </div>
+      <h1>
+        <Link to="/product-listing">Click here to view product listings</Link>
+      </h1>
     </div>
   );
 }

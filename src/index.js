@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom';
 import './bootstrap';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ProductListing from 'pages/ProductListing';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="/product-listing" element={<ProductListing />} />
+    </Routes>
+  </BrowserRouter>,
   document.getElementById('root'),
 );
 

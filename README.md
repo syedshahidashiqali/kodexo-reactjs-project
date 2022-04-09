@@ -10,3 +10,4 @@
 
 - I installed react bootstrap the way I prefer
 - And react-query also added as a package for caching data in local sorage
+- installed sass for implementing desinging
