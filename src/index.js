@@ -5,14 +5,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ProductListing from 'pages/ProductListing';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
+const queryClient = new QueryClient();
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/product-listing" element={<ProductListing />} />
-    </Routes>
-  </BrowserRouter>,
+  <QueryClientProvider client={queryClient}>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/product-listing" element={<ProductListing />} />
+      </Routes>
+    </BrowserRouter>
+    <ReactQueryDevtools initialIsOpen={false} />
+  </QueryClientProvider>,
   document.getElementById('root'),
 );
 
