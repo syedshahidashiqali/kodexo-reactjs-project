@@ -25,20 +25,9 @@ const fetchProducts = async () => {
 
 const ProductContainer = () => {
   const { status, data } = useQuery('products', fetchProducts);
-  // const [fvtItems, setFvtItems] = useState([]);
   const [fvtItems, setFvtItems] = useStateWithLocalStorage([], 'fvtItems');
 
-  // useEffect(() => {
-  //   const items = JSON.parse(localStorage.getItem('fvtItems'));
-  //   if (items) {
-  //     setFvtItems(items);
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   localStorage.setItem('fvtItems', JSON.stringify(fvtItems));
-  // }, [fvtItems]);
-
+  // set item to our fvt list
   const handleFvt = (id) => {
     if (!fvtItems.includes(id)) {
       setFvtItems((prev) => [...prev, id]);
